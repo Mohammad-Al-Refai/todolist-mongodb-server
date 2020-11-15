@@ -1,0 +1,35 @@
+const express=require("express")
+const {addOne,getAll,editOne,deleteOne}=require('./database/db')
+const app=express()
+const bp=require('body-parser')
+app.use(bp.json())
+
+
+app.get("/",(req,res)=>{
+    getAll(data=>{
+        res.send(data)
+    })
+})
+
+
+app.post("/add",(req,res)=>{
+    const value=req.body.value
+    addOne(value,data=>{
+        res.send(data)
+    })
+})
+app.put("/update",(req,res)=>{
+    const old_value=req.body.old_value
+    const value=req.body.value
+    console.log(req.body)
+    editOne(old_value,value,data=>{
+        res.send(data)
+    })
+})
+app.delete("/delete",(req,res)=>{
+    const value=req.body.value
+    deleteOne(value,data=>{
+        res.send(data)
+    })
+})
+app.listen(4000)

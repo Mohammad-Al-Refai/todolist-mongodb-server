@@ -2,7 +2,7 @@ const express=require("express")
 const {addOne,getAll,editOne,deleteOne}=require('./database/db')
 const app=express()
 const bp=require('body-parser')
-const PORT= process.env.PORT||4000
+const PORT=e
 app.use(bp.json())
 
 
@@ -33,4 +33,4 @@ app.delete("/delete",(req,res)=>{
         res.send(data)
     })
 })
-app.listen(PORT)
+app.listen(4000)

@@ -20,6 +20,7 @@ app.post("/add",(req,res)=>{
     })
 })
 app.put("/update",(req,res)=>{
+    console.log(req.body)
     const old_value=req.body.old_value
     const value=req.body.value
     console.log(req.body)
@@ -33,4 +34,5 @@ app.delete("/delete",(req,res)=>{
         res.send(data)
     })
 })
-app.listen(PORT)
+// app.listen(PORT)
+app.listen(e)

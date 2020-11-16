@@ -28,7 +28,7 @@ app.put("/update",(req,res)=>{
         res.send(data)
     })
 })
-app.delete("/delete",(req,res)=>{
+app.post("/delete",(req,res)=>{
     const value=req.body.value
     deleteOne(value,data=>{
         res.send(data)
